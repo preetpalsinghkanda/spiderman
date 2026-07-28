@@ -6,12 +6,12 @@ import Navbar from "./component/Navbar";
 
 const App = () => {
   return (
-    <div className="">
+    <div className="h-100vh">
       {/* <PreLoader/> */}
 
-<Navbar/>
-     <Hero />
- {/*
+      <Navbar />
+      <Hero />
+      {/*
       <RightLeft />
 
       <Hero /> */}
