@@ -38,7 +38,7 @@ const RightLeft = () => {
   return (
     <div
       style={{ fontFamily: "Bricolage Grotesque" }}
-      className="bg-[#BD3334] "
+      className="bg-[#BD3334]  -rotate-3"
     >
       <div className="flex py-10  overflow-hidden">
         <div
