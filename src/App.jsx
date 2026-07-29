@@ -10,11 +10,11 @@ const App = () => {
       {/* <PreLoader/> */}
 
       <Navbar />
-      <Hero />
+    
       {/*
-      <RightLeft />
+      <RightLeft /> */}
 
-      <Hero /> */}
+      <Hero />
     </div>
   );
 };
