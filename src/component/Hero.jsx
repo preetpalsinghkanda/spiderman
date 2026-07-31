@@ -2,6 +2,7 @@ import React from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import spiderHeroImg from "../assets/spider-unsplash.jpg";
 
 const Hero = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -14,7 +15,7 @@ const Hero = () => {
         markers: true,
         pin: true,
         scrub: true,
-        end: "+=1500",
+        end: "+=1350",
         wheelMultiplayer: 2,
       },
     });
@@ -22,28 +23,36 @@ const Hero = () => {
     tl.to(".hero_img", {
       width: "6vw",
       height: "100vh",
-      
+
       left: "48%",
       duration: "2",
       ease: "none",
       scrub: 2,
-    transformOrigin  :"center n cemter",
+      transformOrigin: "center n cemter",
       ease: "power3.out",
-       });
+    });
+
+    gsap.to(".spider_text .left", {
+      x: -350,
+    });
+
+    gsap.to(".spider_text .right", {
+      x: 350,
+    });
   });
 
   return (
     <div className="hero  overflow-hidden relative  h-[100vh] bg-[#F5F2ED] flex justify-center items-center">
-      <div className="border absolute w-[100%] hero_img h-full overflow-hidden">
+      <div className=" absolute z-300  hero_img   top-0 w-screen h-screen overflow-hidden">
         <img
           className="h-full w-full object-cover"
-          src="https://i.ytimg.com/vi/C8WnR3wLFyY/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDhje78gp8rfjITIFrcFoYJNe7rnA"
+          src={spiderHeroImg}
           alt=""
         />
       </div>
 
-      <div className=" gap-8 flex items-center inset-0 absolute justify-center">
-        <div className="opacity-0">
+      <div className="spider_text gap-8 flex items-center inset-0 absolute justify-center">
+        <div className="left">
           <div className=" flex  flex-col ">
             <div className="w-full  my-6 flex justify-between text-xs font-bold text-[#EE3335]">
               <span style={{ letterSpacing: "2px" }} className="">
@@ -69,7 +78,7 @@ const Hero = () => {
 
         {/* <div className="h-15     border w-[51.5vw] bg-[#040809] -rotate-90"></div> */}
 
-        <div className="opacity-0">
+        <div className="right">
           <div className=" flex  flex-col ">
             <div className="w-55  my-6 flex justify-between text-xs font-bold text-[#EE3335]">
               <span>MARVEL</span>

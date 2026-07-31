@@ -11,8 +11,7 @@ const App = () => {
 
       <Navbar />
     
-      {/*
-      <RightLeft /> */}
+       {/* <RightLeft />  */}
 
       <Hero />
     </div>
