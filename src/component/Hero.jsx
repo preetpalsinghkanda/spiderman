@@ -15,7 +15,7 @@ const Hero = () => {
         markers: true,
         pin: true,
         scrub: true,
-        end: "+=1350",
+        end: "+=3050",
         wheelMultiplayer: 2,
       },
     });
@@ -25,20 +25,45 @@ const Hero = () => {
       height: "100vh",
 
       left: "48%",
-      duration: "2",
+      duration: 2,
       ease: "none",
-      scrub: 2,
-      transformOrigin: "center n cemter",
-      ease: "power3.out",
+      
+      transformOrigin: "center center",
+      // ease: "power3.out",
     });
 
-    gsap.to(".spider_text .left", {
-      x: -350,
+ tl.from(".spider_text .left", {
+  x: -350,
+  duration: 4,
+})
+.from(".spider_text .right", {
+  x: 350,
+  duration: 4,
+}, "<");
+
+    tl.to(".overlay", {
+      opacity: 1,
+      duration: 2,
     });
 
-    gsap.to(".spider_text .right", {
-      x: 350,
-    });
+    tl.to(".hero_img",{
+
+      rotate : 77 ,
+      width : "8vh",
+      height : "96vh",
+      x : "20",
+      transformOrigin : "center center",
+      duration : 6
+
+    })
+
+
+   tl.to(".hero_img", {
+  scale: 0,
+  transformOrigin: "center center",
+  duration: 5,
+
+});
   });
 
   return (
@@ -49,6 +74,8 @@ const Hero = () => {
           src={spiderHeroImg}
           alt=""
         />
+
+        <div className="absolute inset-0 bg-black overlay opacity-0"></div>
       </div>
 
       <div className="spider_text gap-8 flex items-center inset-0 absolute justify-center">
