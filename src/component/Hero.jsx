@@ -27,58 +27,76 @@ const Hero = () => {
       left: "48%",
       duration: 2,
       ease: "none",
-      
+
       transformOrigin: "center center",
       // ease: "power3.out",
     });
-
- tl.from(".spider_text .left", {
-  x: -350,
-  duration: 4,
-})
-.from(".spider_text .right", {
-  x: 350,
-  duration: 4,
-}, "<");
 
     tl.to(".overlay", {
       opacity: 1,
       duration: 2,
     });
 
-    tl.to(".hero_img",{
+    tl.to(".hero_img", {
+      rotate: 77,
+      width: "8vh",
+      height: "96vh",
+      x: "20",
+      transformOrigin: "center center",
+      duration: 6,
+    });
 
-      rotate : 77 ,
-      width : "8vh",
-      height : "96vh",
-      x : "20",
-      transformOrigin : "center center",
-      duration : 6
+    tl.from(".spider_text .left", {
+      x: -350,
+      duration: 4,
+    }).from(
+      ".spider_text .right",
+      {
+        x: 350,
+        duration: 4,
+      },
+      "<",
+    );
 
-    })
+    tl.to(
+      ".hero_img",
+      {
+        scale: 0,
+        transformOrigin: "center center",
+        duration: 5,
+      },
+      "<",
+    );
 
+    tl.to(
+      ".spider_text",
+      {
+        gap: "180px",
+        duration: 1,
+        ease: "none",
+      },
+      "<",
+    );
 
-   tl.to(".hero_img", {
-  scale: 0,
-  transformOrigin: "center center",
-  duration: 5,
-
-});
+    tl.to(".spider_text", {
+      gap: "56px",
+      duration: 1,
+    });
   });
 
   return (
     <div className="hero  overflow-hidden relative  h-[100vh] bg-[#F5F2ED] flex justify-center items-center">
-      <div className=" absolute z-300  hero_img   top-0 w-screen h-screen overflow-hidden">
+      <div className="  absolute z-300  hero_img    top-0 w-screen h-screen overflow-hidden">
         <img
           className="h-full w-full object-cover"
           src={spiderHeroImg}
           alt=""
         />
 
-        <div className="absolute inset-0 bg-black overlay opacity-0"></div>
+        <div className="absolute  inset-0 bg-black overlay opacity-0"></div>
       </div>
 
-      <div className="spider_text gap-8 flex items-center inset-0 absolute justify-center">
+      <div className="spider_text gap-14 flex items-center inset-0 absolute justify-center">
         <div className="left">
           <div className=" flex  flex-col ">
             <div className="w-full  my-6 flex justify-between text-xs font-bold text-[#EE3335]">
