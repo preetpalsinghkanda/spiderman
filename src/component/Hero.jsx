@@ -64,6 +64,16 @@ const Hero = () => {
         scale: 0,
         transformOrigin: "center center",
         duration: 5,
+        backgroundColor: "#EE3335",
+      },
+      "<",
+    );
+
+    tl.to(
+      ".overlay",
+      {
+        backgroundColor: "#EE3335",
+        duration: 2.5,
       },
       "<",
     );
@@ -93,7 +103,7 @@ const Hero = () => {
           alt=""
         />
 
-        <div className="absolute  inset-0 bg-black overlay opacity-0"></div>
+        <div className="absolute  inset-0 bg-black  overlay opacity-0"></div>
       </div>
 
       <div className="spider_text gap-14 flex items-center inset-0 absolute justify-center">
