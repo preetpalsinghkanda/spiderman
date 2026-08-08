@@ -5,6 +5,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import spiderHeroImg from "../assets/spider-unsplash.jpg";
 import leftphoto from "../assets/leftphoto.webp";
 import rightphoto from "../assets/rightphoto.webp";
+import longSpider from "../assets/longSpider.png";
 
 const Hero = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -137,6 +138,44 @@ const Hero = () => {
       },
       "+=0.1",
     );
+
+    gsap.set(".longSpider", {
+      yPercent: 100,
+    });
+
+    gsap.set(".leftright", {
+      yPercent: 0,
+    });
+
+    gsap.set(".leftright_overlay", {
+      opacity: 0,
+    });
+
+    tl.to(".longSpider", {
+      yPercent: -1,
+      duration: 12,
+    });
+
+    tl.to(
+      ".leftright",
+      {
+        delay: 6,
+        yPercent: -100,
+        duration: 8,
+        ease: "none",
+      },
+      "<",
+    );
+
+    tl.to(
+      ".leftright_overlay",
+      {
+        opacity: 1,
+        duration: 4,
+        ease: "none",
+      },
+      "<",
+    );
   });
 
   return (
@@ -201,7 +240,8 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="h-full w-full flex">
+      <div className="h-full leftright w-full flex">
+        <div className="absolute inset-0 bg-black leftright_overlay z-50"></div>
         <div className="h-full relative flex-1  bg-[black] left_top_img">
           <img className="h-full w-full object-cover" src={leftphoto} alt="" />
 
@@ -241,6 +281,10 @@ const Hero = () => {
             </h3>
           </div>
         </div>
+      </div>
+
+      <div className="w-full absolute top-0 left-0 longSpider">
+        <img className="w-full h-auto object-top" src={longSpider} alt="" />
       </div>
     </div>
   );
