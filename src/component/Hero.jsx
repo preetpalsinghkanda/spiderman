@@ -152,16 +152,16 @@ const Hero = () => {
     });
 
     tl.to(".longSpider", {
-      yPercent: -1,
-      duration: 12,
+      yPercent: 0,
+      duration: 16,
     });
 
     tl.to(
       ".leftright",
       {
-        delay: 6,
+        delay: 1,
         yPercent: -100,
-        duration: 8,
+        duration: 16,
         ease: "none",
       },
       "<",
@@ -170,8 +170,8 @@ const Hero = () => {
     tl.to(
       ".leftright_overlay",
       {
-        opacity: 1,
-        duration: 4,
+        opacity: 0.7,
+        duration: 5,
         ease: "none",
       },
       "<",
@@ -283,8 +283,36 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="w-full absolute top-0 left-0 longSpider">
+      <div className="w-full absolute top-0 left-0 h-screen longSpider">
         <img className="w-full h-auto object-top" src={longSpider} alt="" />
+        <div className="absolute top-0 left-0 inset-0 z-[200] flex items-center justify-center">
+          <p
+            style={{ fontFamily: "Anton" }}
+            className=" text-white max-w-2xl text-center uppercase text-8xl"
+          >
+            Brand New Day
+            <span
+              style={{ fontFamily: "Bricolage Grotesque" }}
+              className="text-2xl"
+            >
+              is
+            </span>
+            <span className="block">
+             
+              <span
+                style={{ fontFamily: "Bricolage Grotesque" }}
+                className="text-2xl mx-2 "
+              >
+                a
+              </span>
+              new chapter in
+            </span>
+            the story of
+            <span className="block text-[#A00302]  [-webkit-text-stroke:2px_white]  ">
+              Peter Parker
+            </span>
+          </p>
+        </div>
       </div>
     </div>
   );

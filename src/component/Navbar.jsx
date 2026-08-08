@@ -3,7 +3,7 @@ import spiderLogo from "../assets/spiderlogo.png";
 
 const Navbar = () => {
   return (
-    <div className=" my-4 z-500 fixed border border-black justify-between -top-4 w-full flex items-center px-10">
+    <div className=" my-4 z-500 fixed  justify-between -top-4 w-full flex items-center px-10">
       <span className="text-[#EE3335] text-sm font-medium">ABOUT</span>
       <span className="text-[#EE3335] text-sm font-medium">CAST</span>
       <span className="h-20 ">
