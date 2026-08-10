@@ -6,6 +6,7 @@ import spiderHeroImg from "../assets/spider-unsplash.jpg";
 import leftphoto from "../assets/leftphoto.webp";
 import rightphoto from "../assets/rightphoto.webp";
 import longSpider from "../assets/longSpider.png";
+import spiderVideo from "../assets/bgspider.mp4";
 
 const Hero = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -16,11 +17,20 @@ const Hero = () => {
       yPercent: 100,
     });
 
+    gsap.set(".longSpiderBlack", {
+      opacity: 0,
+    });
+
+    gsap.set(".spidervideo", {
+      // opacity : 0 ,
+      yPercent: 100,
+    });
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".hero",
         start: "top top",
-        // markers: true,
+        markers: true,
         pin: true,
         scrub: true,
         end: "+=3050",
@@ -191,6 +201,21 @@ const Hero = () => {
       },
       "<",
     );
+
+    tl.to(".spidervideo", {
+      // opacity : 1 ,
+      duration: 50,
+      yPercent: 0,
+    });
+
+    tl.to(
+      ".longSpiderBlack",
+      {
+        opacity: 1,
+        duration: 20,
+      },
+      "<10%",
+    );
   });
 
   return (
@@ -229,8 +254,6 @@ const Hero = () => {
             SACRIFICES, AND UNFORGETTABLE ADVENTURES.
           </p>
         </div>
-
-        {/* <div className="h-15     border w-[51.5vw] bg-[#040809] -rotate-90"></div> */}
 
         <div className="right ">
           <div className=" flex  flex-col ">
@@ -298,10 +321,13 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="w-full absolute top-0 left-0 h-screen longSpider">
+      <div className="w-full absolute z-10 top-0 left-0 h-screen longSpider">
         <img className="w-full h-auto object-top" src={longSpider} alt="" />
+
+        <div className="absolute left-0 right-0 top-[1200px] -bottom-500 longSpiderBlack bg-black/70 z-50 pointer-events-none"></div>
       </div>
-      <div className="longspider_text absolute inset-0 z-[200] flex items-center justify-center">
+
+      <div className="longspider_text absolute inset-0 z-[30] flex items-center justify-center">
         <p
           style={{ fontFamily: "Anton" }}
           className=" text-white max-w-2xl text-center uppercase text-8xl"
@@ -327,6 +353,20 @@ const Hero = () => {
             Peter Parker
           </span>
         </p>
+      </div>
+
+      <div className="spidervideo  z-40 w-full h-screen overflow-hidden absolute">
+        <video
+          className="absolute inset-0 w-full h-full object-cover scale-102 "
+          autoPlay
+          loop
+          muted
+          src={spiderVideo}
+        ></video>
+
+        <div className="absolute inset-0 bg-black/50"></div>
+
+        <div className="relative z-10"></div>
       </div>
     </div>
   );
