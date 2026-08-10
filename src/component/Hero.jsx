@@ -11,6 +11,11 @@ const Hero = () => {
   gsap.registerPlugin(ScrollTrigger);
 
   useGSAP(() => {
+    gsap.set(".longspider_text", {
+      opacity: 0,
+      yPercent: 100,
+    });
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".hero",
@@ -152,9 +157,19 @@ const Hero = () => {
     });
 
     tl.to(".longSpider", {
-      yPercent: 0,
-      duration: 16,
+      yPercent: -190,
+      duration: 60,
     });
+
+    tl.to(
+      ".longspider_text",
+      {
+        opacity: 1,
+        yPercent: 0,
+        duration: 20,
+      },
+      "<10%",
+    );
 
     tl.to(
       ".leftright",
@@ -285,34 +300,33 @@ const Hero = () => {
 
       <div className="w-full absolute top-0 left-0 h-screen longSpider">
         <img className="w-full h-auto object-top" src={longSpider} alt="" />
-        <div className="absolute top-0 left-0 inset-0 z-[200] flex items-center justify-center">
-          <p
-            style={{ fontFamily: "Anton" }}
-            className=" text-white max-w-2xl text-center uppercase text-8xl"
+      </div>
+      <div className="longspider_text absolute inset-0 z-[200] flex items-center justify-center">
+        <p
+          style={{ fontFamily: "Anton" }}
+          className=" text-white max-w-2xl text-center uppercase text-8xl"
+        >
+          Brand New Day
+          <span
+            style={{ fontFamily: "Bricolage Grotesque" }}
+            className="text-2xl"
           >
-            Brand New Day
+            is
+          </span>
+          <span className="block">
             <span
               style={{ fontFamily: "Bricolage Grotesque" }}
-              className="text-2xl"
+              className="text-2xl mx-2 "
             >
-              is
+              a
             </span>
-            <span className="block">
-             
-              <span
-                style={{ fontFamily: "Bricolage Grotesque" }}
-                className="text-2xl mx-2 "
-              >
-                a
-              </span>
-              new chapter in
-            </span>
-            the story of
-            <span className="block text-[#A00302]  [-webkit-text-stroke:2px_white]  ">
-              Peter Parker
-            </span>
-          </p>
-        </div>
+            new chapter in
+          </span>
+          the story of
+          <span className="block text-[#A00302]  [-webkit-text-stroke:2px_white]  ">
+            Peter Parker
+          </span>
+        </p>
       </div>
     </div>
   );
