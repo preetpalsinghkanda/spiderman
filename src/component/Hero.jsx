@@ -21,10 +21,10 @@ const Hero = () => {
       opacity: 0,
     });
 
-    gsap.set(".spidervideo", {
-      // opacity : 0 ,
-      yPercent: 100,
-    });
+    // gsap.set(".spidervideo", {
+    //   // opacity : 0 ,
+    //   yPercent: 100,
+    // });
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -202,10 +202,16 @@ const Hero = () => {
       "<",
     );
 
+    gsap.set(".spidervideo", {
+      // bottom: 0,
+      clipPath: "inset(100% 0% 0% 0%)",
+    });
+
     tl.to(".spidervideo", {
-      // opacity : 1 ,
+      // height: "100vh",
       duration: 50,
-      yPercent: 0,
+      clipPath: "inset(0% 0% 0% 0%)",
+      ease: "none",
     });
 
     tl.to(
@@ -355,9 +361,9 @@ const Hero = () => {
         </p>
       </div>
 
-      <div className="spidervideo  z-40 w-full h-screen overflow-hidden absolute">
+      <div className="spidervideo  z-40 w-full h-full overflow-hidden absolute">
         <video
-          className="absolute inset-0 w-full h-full object-cover scale-102 "
+          className="absolute inset-0 w-full h-full object-cover  "
           autoPlay
           loop
           muted
@@ -366,7 +372,50 @@ const Hero = () => {
 
         <div className="absolute inset-0 bg-black/50"></div>
 
-        <div className="relative z-10"></div>
+        <div className="absolute justify-center uppercase  flex-col spidervideo_text w-full px-8 inset-0 flex items-center  z-60">
+          <div className="text-[#EE3335]  w-full flex justify-between">
+            <div className="">
+              <span
+                style={{ fontFamily: "Sekuya" }}
+                className="text-8xl font-extrabold"
+              >
+                Truth
+              </span>
+              <span className="mx-3">01</span>
+            </div>
+            <div>
+              <span className="mx-3">03</span>
+              <span
+                style={{ fontFamily: "Sekuya" }}
+                className="text-8xl font-extrabold"
+              >
+                grit
+              </span>
+            </div>
+          </div>
+
+          <div className="flex w-full justify-between text-[#EE3335]">
+            <div>
+              <span
+                style={{ fontFamily: "Sekuya" }}
+                className="text-8xl font-extrabold"
+              >
+                Humility
+              </span>
+              <span className="mx-3">02</span>
+            </div>
+
+            <div>
+              <span className="mx-3">04</span>
+              <span
+                style={{ fontFamily: "Sekuya" }}
+                className="text-8xl font-extrabold"
+              >
+                Evolve
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
