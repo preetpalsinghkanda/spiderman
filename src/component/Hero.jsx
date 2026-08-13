@@ -43,7 +43,7 @@ const Hero = () => {
       height: "100vh",
 
       left: "47%",
-      duration: 8,
+      duration: 40,
       ease: "none",
 
       transformOrigin: "center center",
@@ -52,7 +52,7 @@ const Hero = () => {
 
     tl.to(".overlay", {
       opacity: 1,
-      duration: 2,
+      duration: 15,
     });
 
     tl.to(".hero_img", {
@@ -61,17 +61,17 @@ const Hero = () => {
       height: "90vh",
       x: "12",
       transformOrigin: "center center",
-      duration: 6,
+      duration: 35,
     });
 
     tl.from(".spider_text .left", {
       x: -330,
-      duration: 4,
+      duration: 30,
     }).from(
       ".spider_text .right",
       {
         x: 330,
-        duration: 4,
+        duration: 30,
       },
       "<",
     );
@@ -81,7 +81,7 @@ const Hero = () => {
       {
         scale: 0,
         transformOrigin: "center center",
-        duration: 5,
+        duration: 40,
         backgroundColor: "#EE3335",
       },
       "<",
@@ -91,7 +91,7 @@ const Hero = () => {
       ".overlay",
       {
         backgroundColor: "#EE3335",
-        duration: 2.5,
+        duration: 10,
       },
       "<",
     );
@@ -100,7 +100,7 @@ const Hero = () => {
       ".spider_text",
       {
         gap: "180px",
-        duration: 1,
+        duration: 6,
         ease: "none",
       },
       "<",
@@ -108,7 +108,7 @@ const Hero = () => {
 
     tl.to(".spider_text", {
       gap: "56px",
-      duration: 1,
+      duration: 6,
     });
 
     gsap.set(".left_top_img", {
@@ -121,14 +121,14 @@ const Hero = () => {
 
     tl.to(".left_top_img", {
       yPercent: 0,
-      duration: 8,
+      duration: 40,
     });
 
     tl.to(
       ".right_bottom_img",
       {
         yPercent: 0,
-        duration: 8,
+        duration: 40,
       },
       "<",
     );
@@ -140,7 +140,7 @@ const Hero = () => {
 
     tl.to([".line1", ".line3"], {
       opacity: 1,
-      duration: 3,
+      duration: 6,
       yPercent: 0,
     });
 
@@ -148,7 +148,7 @@ const Hero = () => {
       [".line2", ".line4"],
       {
         opacity: 1,
-        duration: 3,
+        duration: 6,
         yPercent: 0,
       },
       "+=0.1",
@@ -168,7 +168,7 @@ const Hero = () => {
 
     tl.to(".longSpider", {
       yPercent: -190,
-      duration: 60,
+      duration: 100,
     });
 
     tl.to(
@@ -176,7 +176,7 @@ const Hero = () => {
       {
         opacity: 1,
         yPercent: 0,
-        duration: 20,
+        duration: 30,
       },
       "<10%",
     );
@@ -186,7 +186,7 @@ const Hero = () => {
       {
         delay: 1,
         yPercent: -100,
-        duration: 16,
+        duration: 30,
         ease: "none",
       },
       "<",
@@ -196,7 +196,7 @@ const Hero = () => {
       ".leftright_overlay",
       {
         opacity: 0.7,
-        duration: 5,
+        duration: 10,
         ease: "none",
       },
       "<",
