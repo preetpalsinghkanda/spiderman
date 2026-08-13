@@ -30,11 +30,11 @@ const Hero = () => {
       scrollTrigger: {
         trigger: ".hero",
         start: "top top",
-        markers: true,
+        // markers: true,
         pin: true,
         scrub: true,
         end: "+=3050",
-        wheelMultiplayer: 2,
+        wheelMultiplier: 2,
       },
     });
 
@@ -207,6 +207,11 @@ const Hero = () => {
       clipPath: "inset(100% 0% 0% 0%)",
     });
 
+    gsap.set([".spidervideo_text_firstline", ".spidervideo_text_secondline"], {
+      yPercent: 60,
+      opacity: 0,
+    });
+
     tl.to(".spidervideo", {
       // height: "100vh",
       duration: 50,
@@ -221,6 +226,48 @@ const Hero = () => {
         duration: 20,
       },
       "<10%",
+    );
+
+    tl.to(
+      ".spidervideo_text_firstline",
+      {
+        yPercent: 0,
+        duration: 6,
+        opacity: 1,
+      },
+      "-=20",
+    );
+
+    tl.to(
+      ".spidervideo_text_secondline",
+      {
+        yPercent: 0,
+        duration: 6,
+        opacity: 1,
+      },
+      "-=25",
+    );
+
+    gsap.set(".starcast", {
+      yPercent: 170,
+    });
+
+    tl.to(
+      ".starcast",
+      {
+        yPercent: 0,
+        duration: 100,
+      },
+      "+=30",
+    );
+
+    tl.to(
+      ".spidervideo",
+      {
+        yPercent: -50,
+        duration: 100,
+      },
+      "<",
     );
   });
 
@@ -333,6 +380,7 @@ const Hero = () => {
         <div className="absolute left-0 right-0 top-[1200px] -bottom-500 longSpiderBlack bg-black/70 z-50 pointer-events-none"></div>
       </div>
 
+      {/* long spider  */}
       <div className="longspider_text absolute inset-0 z-[30] flex items-center justify-center">
         <p
           style={{ fontFamily: "Anton" }}
@@ -361,6 +409,7 @@ const Hero = () => {
         </p>
       </div>
 
+      {/* video  */}
       <div className="spidervideo  z-40 w-full h-full overflow-hidden absolute">
         <video
           className="absolute inset-0 w-full h-full object-cover  "
@@ -373,7 +422,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-black/50"></div>
 
         <div className="absolute justify-center uppercase  flex-col spidervideo_text w-full px-8 inset-0 flex items-center  z-60">
-          <div className="text-[#EE3335]  w-full flex justify-between">
+          <div className="text-[#EE3335]  w-full flex justify-between spidervideo_text_firstline">
             <div className="">
               <span
                 style={{ fontFamily: "Sekuya" }}
@@ -394,7 +443,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="flex w-full justify-between text-[#EE3335]">
+          <div className="flex w-full spidervideo_text_secondline justify-between text-[#EE3335]">
             <div>
               <span
                 style={{ fontFamily: "Sekuya" }}
@@ -416,6 +465,17 @@ const Hero = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="starcast bg-[#F5F2ED] text-[#EE3335] z-70 min-h-screen  absolute w-full ">
+        <h2
+          style={{ fontFamily: "Libre Baskerville" }}
+          className="text-8xl fixed my-45 text-center tracking-tighter"
+        >
+          Meet The Cast{" "}
+          <span className="inline-block italic">New faces Familiar legacy</span>{" "}
+          <span className="inline-block">One Brand New Day</span>
+        </h2>
       </div>
     </div>
   );
