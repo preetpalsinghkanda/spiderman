@@ -250,7 +250,7 @@ const Hero = () => {
     );
 
     gsap.set(".starcast", {
-      yPercent: 170,
+      yPercent: 80,
     });
 
     tl.to(
@@ -284,8 +284,13 @@ const Hero = () => {
         duration: 20,
         stagger: 6,
       },
-      "-=63",
+      "-=85",
     );
+
+    // gsap.set(".allcast_img",{
+    //   top: "70px",
+
+    // })
 
     tl.to(
       ".peter_img",
@@ -296,6 +301,35 @@ const Hero = () => {
       },
       "-=52",
     );
+
+    tl.to(
+      ".allcast_img",
+      {
+        top: "70px",
+        duration: 80,
+      },
+      "<",
+    );
+
+    gsap.set(".peter_text",{
+      opacity: 0,
+      yPercent: 30
+
+    })
+
+    tl.to(".peter_text",{
+      opacity :1 ,
+      duration : 20,
+      yPercent: 0
+
+    },"+=30")
+
+
+
+
+
+
+
   });
 
   return (
@@ -506,10 +540,28 @@ const Hero = () => {
           <span className="inline-block">One Brand New Day</span>
         </h2>
 
-        <div className="absolute w-full  left-1/2 h-[screen] top-40 z-[45] ">
-          <div className="peter_img overflow-hidden ">
-            <img className="h-auto object-contain " src={peter} alt="" />
-            <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#F5F2ED] to-transparent z-30 "></div>
+        <div className="absolute allcast_img w-full  left-1/8 h-[screen] top-40 z-[45] ">
+          <div className="peter_img  overflow-hidden flex-col  flex justify-center items-center  w-screen ">
+            <div className="">
+              <img className="h-auto object-contain " src={peter} alt="" />
+              {/* <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#F5F2ED] to-transparent z-30 "></div> */}
+            </div>
+
+            <div className=" items-center peter_text flex px-10 justify-between relative bottom-4 w-full">
+              
+              <h4
+                style={{ fontFamily: "Sekuya" }}
+                className="uppercase text-6xl"
+              >
+                Peter <span className="block">Parker</span>
+              </h4>
+              <p className=" max-w-sm font-medium text-[15px] text-justify">
+                PETER PARKER RETURNS TO A NEW CHAPTER, CARRYING THE WEIGHT OF
+                HIS PAST WHILE FACING AN UNCERTAIN FUTURE. BEHIND THE MASK, HE
+                REMAINS A HERO SHAPED BY LOSS, RESPONSIBILITY, AND THE CHOICE TO
+                RISE AGAIN.
+              </p>
+            </div>
           </div>
         </div>
       </div>
