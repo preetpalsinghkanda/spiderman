@@ -7,6 +7,7 @@ import leftphoto from "../assets/leftphoto.webp";
 import rightphoto from "../assets/rightphoto.webp";
 import longSpider from "../assets/longSpider.png";
 import spiderVideo from "../assets/bgspider.mp4";
+import peter from "../assets/peter.png";
 
 const Hero = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -121,14 +122,14 @@ const Hero = () => {
 
     tl.to(".left_top_img", {
       yPercent: 0,
-      duration: 40,
+      duration: 60,
     });
 
     tl.to(
       ".right_bottom_img",
       {
         yPercent: 0,
-        duration: 40,
+        duration: 60,
       },
       "<",
     );
@@ -268,6 +269,32 @@ const Hero = () => {
         duration: 100,
       },
       "<",
+    );
+
+    gsap.set(".starcast_heading span", {
+      yPercent: 6,
+      opacity: 0,
+    });
+
+    tl.to(
+      ".starcast_heading span",
+      {
+        yPercent: 0,
+        opacity: 1,
+        duration: 20,
+        stagger: 6,
+      },
+      "-=63",
+    );
+
+    tl.to(
+      ".peter_img",
+      {
+        yPercent: 50,
+        duration: 90,
+        xPercent: -12,
+      },
+      "-=52",
     );
   });
 
@@ -467,15 +494,24 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="starcast bg-[#F5F2ED] text-[#EE3335] z-70 min-h-screen  absolute w-full ">
+      <div className="starcast bg-[#F5F2ED] text-[#EE3335] z-70 h-[230vh]  absolute overflow-visible w-full ">
         <h2
           style={{ fontFamily: "Libre Baskerville" }}
-          className="text-8xl fixed my-45 text-center tracking-tighter"
+          className="text-8xl starcast_heading  fixed my-45 text-center tracking-tighter"
         >
-          Meet The Cast{" "}
-          <span className="inline-block italic">New faces Familiar legacy</span>{" "}
+          <span>Meet The Cast</span>
+          <span className="inline-block italic">
+            New faces Familiar legacy
+          </span>{" "}
           <span className="inline-block">One Brand New Day</span>
         </h2>
+
+        <div className="absolute w-full  left-1/2 h-[screen] top-40 z-[45] ">
+          <div className="peter_img overflow-hidden ">
+            <img className="h-auto object-contain " src={peter} alt="" />
+            <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#F5F2ED] to-transparent z-30 "></div>
+          </div>
+        </div>
       </div>
     </div>
   );
