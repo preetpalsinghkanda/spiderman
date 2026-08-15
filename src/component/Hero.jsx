@@ -8,6 +8,7 @@ import rightphoto from "../assets/rightphoto.webp";
 import longSpider from "../assets/longSpider.png";
 import spiderVideo from "../assets/bgspider.mp4";
 import peter from "../assets/peter.png";
+import mj from "../assets/mj.png";
 
 const Hero = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -311,25 +312,88 @@ const Hero = () => {
       "<",
     );
 
-    gsap.set(".peter_text",{
+    gsap.set(".peter_text", {
       opacity: 0,
-      yPercent: 30
+      yPercent: 30,
+    });
 
-    })
+    tl.to(
+      ".peter_text",
+      {
+        opacity: 1,
+        duration: 20,
+        yPercent: 0,
+      },
+      "+=30",
+    );
 
-    tl.to(".peter_text",{
-      opacity :1 ,
-      duration : 20,
-      yPercent: 0
+    gsap.set(".char2_box", {
+      // opacity : 0 ,
+      yPercent: 20,
+      xPercent: -12,
+    });
 
-    },"+=30")
+    gsap.set(".char2_img", {
+      opacity: 0,
+      yPercent: 30,
+      xPercent: 10,
+    });
 
+    gsap.set(".char2_text", {
+      opacity: 0,
+      yPercent: 30,
+    });
 
+    tl.to(
+      ".peterparker_img",
+      {
+        opacity: 0,
+        yPercent: -20,
+        duration: 80,
+      },
+      "+=50 ",
+    );
 
+    tl.to(
+      ".peter_text",
+      {
+        opacity: 0,
+        duration: 50,
+        yPercent: 40,
+      },
+      "+=10",
+    );
 
+    tl.to(
+      ".char2_box",
+      {
+        duration: 80,
 
+        y: 448,
+        yPercent: 0,
+      },
+      "<",
+    );
 
+    tl.to(
+      ".char2_img",
+      {
+        opacity: 1,
+        yPercent: 0,
+        duration: 40,
+      },
+      "<",
+    );
 
+    tl.to(
+      ".char2_text",
+      {
+        opacity: 1,
+        yPercent: 0,
+        duration: 30,
+      },
+      "+=15",
+    );
   });
 
   return (
@@ -541,26 +605,48 @@ const Hero = () => {
         </h2>
 
         <div className="absolute allcast_img w-full  left-1/8 h-[screen] top-40 z-[45] ">
-          <div className="peter_img  overflow-hidden flex-col  flex justify-center items-center  w-screen ">
-            <div className="">
-              <img className="h-auto object-contain " src={peter} alt="" />
-              {/* <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#F5F2ED] to-transparent z-30 "></div> */}
+          <div className="char_wrap relative w-screen h-[100vh] ">
+            <div className="peter_img absolute inset-0    overflow-hidden flex-col  flex justify-center items-center  w-screen ">
+              <div className="peterparker_img">
+                <img className="h-auto object-contain " src={peter} alt="" />
+                {/* <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#F5F2ED] to-transparent z-30 "></div> */}
+              </div>
+
+              <div className=" items-center peter_text flex px-10 justify-between relative bottom-4 w-full">
+                <h4
+                  style={{ fontFamily: "Sekuya" }}
+                  className="uppercase text-6xl"
+                >
+                  Peter <span className="block">Parker</span>
+                </h4>
+                <p className=" max-w-sm font-medium text-[15px] text-justify">
+                  PETER PARKER RETURNS TO A NEW CHAPTER, CARRYING THE WEIGHT OF
+                  HIS PAST WHILE FACING AN UNCERTAIN FUTURE. BEHIND THE MASK, HE
+                  REMAINS A HERO SHAPED BY LOSS, RESPONSIBILITY, AND THE CHOICE
+                  TO RISE AGAIN.
+                </p>
+              </div>
             </div>
 
-            <div className=" items-center peter_text flex px-10 justify-between relative bottom-4 w-full">
-              
-              <h4
-                style={{ fontFamily: "Sekuya" }}
-                className="uppercase text-6xl"
-              >
-                Peter <span className="block">Parker</span>
-              </h4>
-              <p className=" max-w-sm font-medium text-[15px] text-justify">
-                PETER PARKER RETURNS TO A NEW CHAPTER, CARRYING THE WEIGHT OF
-                HIS PAST WHILE FACING AN UNCERTAIN FUTURE. BEHIND THE MASK, HE
-                REMAINS A HERO SHAPED BY LOSS, RESPONSIBILITY, AND THE CHOICE TO
-                RISE AGAIN.
-              </p>
+            <div className="char2_box absolute  h-screen inset-0 overflow-hidden flex-col flex justify-center items-center w-screen ">
+              <div className="char2_img ">
+                <img src={mj} alt="" className="h-auto  object-contain " />
+              </div>
+
+              <div className="items-center char2_text flex px-10 justify-between relative w-full bottom-4">
+                <h4
+                  style={{ fontFamily: "Sekuya" }}
+                  className="uppercase text-6xl"
+                >
+                  Mary jane <span className="block">watson</span>
+                </h4>
+                <p className="max-w-sm font-medium text-[15px] text-justify">
+                  MJ RETURNS TO A NEW CHAPTER, CARRYING THE MEMORIES OF THE PAST
+                  WHILE STEPPING INTO AN UNCERTAIN FUTURE. STRONG, RESILIENT,
+                  AND UNAFRAID, SHE STANDS BESIDE PETER AS A FAMILIAR HEART IN A
+                  BRAND NEW DAY.
+                </p>
+              </div>
             </div>
           </div>
         </div>
