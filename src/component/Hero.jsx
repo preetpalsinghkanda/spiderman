@@ -10,6 +10,10 @@ import spiderVideo from "../assets/bgspider.mp4";
 import peter from "../assets/peter.png";
 import mj from "../assets/mj.png";
 import frnd from "../assets/frnd.png";
+import jane from "../assets/jane.png";
+import banner from "../assets/hulk.png";
+import scorpion from "../assets/scorpion.png";
+import punisher from "../assets/punisher.png";
 
 const Hero = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -328,22 +332,51 @@ const Hero = () => {
       "+=30",
     );
 
-    gsap.set([".char2_box", ".char3_box"], {
-      // opacity : 0 ,
-      yPercent: 20,
-      xPercent: -12,
-    });
+    gsap.set(
+      [
+        ".char2_box",
+        ".char3_box",
+        ".char4_box",
+        ".char5_box",
+        ".char6_box",
+        ".char7_box",
+      ],
+      {
+        // opacity : 0 ,
+        yPercent: 20,
+        xPercent: -12,
+      },
+    );
 
-    gsap.set([".char2_img",".char3_img"], {
+    gsap.set(".char2_img", {
       opacity: 0,
       yPercent: 30,
       xPercent: 10,
     });
 
-    gsap.set([".char2_text", ".char3_text"], {
-      opacity: 0,
-      yPercent: 30,
-    });
+    gsap.set(
+      [".char3_img", ".char4_img", ".char5_img", ".char6_img", ".char7_img"],
+      {
+        opacity: 0,
+        yPercent: 30,
+        xPercent: 0,
+      },
+    );
+
+    gsap.set(
+      [
+        ".char2_text",
+        ".char3_text",
+        ".char4_text",
+        ".char5_text",
+        ".char6_text",
+        ".char7_text",
+      ],
+      {
+        opacity: 0,
+        yPercent: 30,
+      },
+    );
 
     tl.to(
       ".peterparker_img",
@@ -364,7 +397,6 @@ const Hero = () => {
       },
       "+=10",
     );
-
 
     tl.to(
       ".char2_box",
@@ -387,8 +419,6 @@ const Hero = () => {
       "+=10",
     );
 
-    
-
     tl.to(
       ".char2_text",
       {
@@ -399,8 +429,7 @@ const Hero = () => {
       "+=15",
     );
 
-
-     tl.to(
+    tl.to(
       ".char2_img",
       {
         opacity: 0,
@@ -410,7 +439,7 @@ const Hero = () => {
       "+=50 ",
     );
 
-       tl.to(
+    tl.to(
       ".char2_text",
       {
         opacity: 0,
@@ -420,28 +449,261 @@ const Hero = () => {
       "+=10",
     );
 
-    tl.to(".char3_box" , {
-      duration : 80 ,
-      y:448,
-      yPercent : 0,
-    }, "<")
+    tl.to(
+      ".char3_box",
+      {
+        duration: 80,
+        y: 448,
+        yPercent: 0,
+      },
+      "<",
+    );
 
+    tl.to(
+      ".char3_img",
+      {
+        opacity: 1,
+        yPercent: 0,
+        duration: 40,
+        xPercent: 0,
+      },
+      "+=10",
+    );
 
-    tl.to(".char3_img",{
-      opacity: 1,
-      yPercent: 0,
-      duration : 40 ,
-      xPercent: 0,
+    tl.to(
+      ".char3_text",
+      {
+        opacity: 1,
+        yPercent: 0,
+        duration: 40,
+      },
+      "+=15",
+    );
 
-    }, "+=10")
+    tl.to(
+      ".char3_img",
+      {
+        opacity: 0,
+        yPercent: -20,
+        duration: 80,
+      },
+      "+=50 ",
+    );
 
+    tl.to(
+      ".char3_text",
+      {
+        opacity: 0,
+        duration: 50,
+        yPercent: 40,
+      },
+      "+=10",
+    );
 
-    tl.to(".char3_text" , {
-      opacity: 1,
-      yPercent: 0,
-      duration: 40
-    },"+=15")
+    tl.to(
+      ".char4_box",
+      {
+        duration: 80,
+        y: 400,
+        yPercent: 0,
+      },
+      "<",
+    );
 
+    tl.to(
+      ".char4_img",
+      {
+        opacity: 1,
+        yPercent: 0,
+
+        duration: 40,
+        xPercent: 0,
+      },
+      "+=10",
+    );
+
+    tl.to(
+      ".char4_text",
+      {
+        opacity: 1,
+        yPercent: 0,
+        duration: 40,
+      },
+      "+=15",
+    );
+
+    tl.to(
+      ".char4_img",
+      {
+        opacity: 0,
+        yPercent: -20,
+        duration: 80,
+      },
+      "+=50",
+    );
+
+    tl.to(
+      ".char4_text",
+      {
+        opacity: 0,
+        duration: 50,
+        yPercent: 40,
+      },
+      "+=10",
+    );
+
+    tl.to(
+      ".char5_box",
+      {
+        duration: 80,
+        y: 400,
+        yPercent: 0,
+      },
+      "<",
+    );
+
+    tl.to(
+      ".char5_img",
+      {
+        opacity: 1,
+        yPercent: 0,
+        duration: 40,
+        xPercent: 0,
+      },
+      "+=10",
+    );
+
+    tl.to(
+      ".char5_text",
+      {
+        opacity: 1,
+        yPercent: 0,
+        duration: 40,
+      },
+      "+=15",
+    );
+
+    tl.to(
+      ".char5_img",
+      {
+        opacity: 0,
+        yPercent: -20,
+        duration: 80,
+      },
+      "+=50",
+    );
+
+    tl.to(
+      ".char5_text",
+      {
+        opacity: 0,
+        duration: 50,
+        yPercent: 40,
+      },
+      "+=10",
+    );
+
+    tl.to(
+      ".char6_box",
+      {
+        duration: 80,
+        y: 400,
+        yPercent: 0,
+      },
+      "<",
+    );
+
+    tl.to(
+      ".char6_img",
+      {
+        opacity: 1,
+        yPercent: 0,
+        duration: 40,
+        xPercent: 0,
+      },
+      "+=10",
+    );
+
+    tl.to(
+      ".char6_text",
+      {
+        opacity: 1,
+        yPercent: 0,
+        duration: 40,
+      },
+      "+=15",
+    );
+
+    tl.to(
+      ".char6_img",
+      {
+        opacity: 0,
+        yPercent: -20,
+        duration: 80,
+      },
+      "+=50",
+    );
+
+    tl.to(
+      ".char6_text",
+      {
+        opacity: 0,
+        duration: 50,
+        yPercent: 40,
+      },
+      "+=10",
+    );
+
+    tl.to(
+      ".char7_box",
+      {
+        duration: 80,
+        y: 400,
+        yPercent: 0,
+      },
+      "<",
+    );
+
+    tl.to(
+      ".char7_img",
+      {
+        opacity: 1,
+        yPercent: 0,
+        duration: 40,
+        xPercent: 0,
+      },
+      "+=10",
+    );
+
+    tl.to(
+      ".char7_text",
+      {
+        opacity: 1,
+        yPercent: 0,
+        duration: 40,
+      },
+      "+=15",
+    );
+
+    tl.to(
+      ".char7_img",
+      {
+        opacity: 0,
+        yPercent: -20,
+        duration: 80,
+      },
+      "+=50",
+    );
+
+    tl.to(
+      ".char7_text",
+      {
+        opacity: 0,
+        duration: 50,
+        yPercent: 40,
+      },
+      "+=10",
+    );
   });
 
   return (
@@ -713,6 +975,86 @@ const Hero = () => {
                   THE PAST WHILE STEPPING INTO AN UNCERTAIN FUTURE. LOYAL,
                   BRILLIANT, AND UNWAVERING, HE STANDS BESIDE PETER AS A TRUSTED
                   FRIEND THROUGH EVERY TWIST OF A BRAND NEW DAY.
+                </p>
+              </div>
+            </div>
+
+            <div className="char4_box absolute h-screen  inset-0 overflow-hidden flex-col flex justify-center items-center w-screen">
+              <div className="char4_img">
+                <img src={jane} alt="" className="h-auto object-contain" />
+              </div>
+              <div className="items-center char4_text flex px-10 justify-between relative w-full bottom-4">
+                <h2
+                  style={{ fontFamily: "Sekuya" }}
+                  className="uppercase text-6xl"
+                >
+                  Jean <span className="block">grey</span>
+                </h2>
+                <p className="max-w-sm font-medium text-[15px] text-justify">
+                  JEAN GREY RETURNS TO A NEW CHAPTER, CARRYING THE STRENGTH OF
+                  HER PAST WHILE STEPPING INTO AN UNCERTAIN FUTURE. FEARLESS,
+                  COMPASSIONATE, AND RESILIENT, SHE BRINGS A POWERFUL NEW
+                  PRESENCE TO PETER’S WORLD ON A BRAND NEW DAY.
+                </p>
+              </div>
+            </div>
+
+            <div className="char5_box absolute h-screen top-15  inset-0 overflow-hidden flex-col flex justify-center items-center w-screen">
+              <div className="char5_img">
+                <img src={banner} alt="" className="h-auto object-contain" />
+              </div>
+              <div className="items-center char5_text flex px-10 justify-between relative w-full bottom-4">
+                <h2
+                  style={{ fontFamily: "Sekuya" }}
+                  className="uppercase text-6xl"
+                >
+                  Dr. Bruce <span className="block">banner</span>
+                </h2>
+                <p className="max-w-sm font-medium text-[15px] text-justify">
+                  DR. BRUCE BANNER RETURNS TO A NEW CHAPTER, CARRYING THE WEIGHT
+                  OF HIS PAST WHILE STEPPING INTO AN UNCERTAIN FUTURE.
+                  BRILLIANT, POWERFUL, AND DRIVEN, HE BRINGS A UNIQUE FORCE TO
+                  PETER’S WORLD AS A NEW DAY BEGINS.
+                </p>
+              </div>
+            </div>
+
+            <div className="char6_box absolute h-screen top-8 gap-10 inset-0 overflow-hidden flex-col flex justify-center items-center w-screen">
+              <div className="char6_img">
+                <img src={punisher} alt="" className="h-auto object-contain" />
+              </div>
+              <div className="items-center char6_text flex px-10 justify-between relative w-full bottom-4">
+                <h2
+                  style={{ fontFamily: "Sekuya" }}
+                  className="uppercase text-6xl"
+                >
+                  frank <span className="block">castle</span>
+                </h2>
+                <p className="max-w-sm font-medium text-[15px] text-justify">
+                  FRANK CASTLE (PUNSIHER) RETURNS TO A NEW CHAPTER, CARRYING THE
+                  PAIN OF HIS PAST WHILE WALKING A PATH OF VENGEANCE.FEARLESS,
+                  RELENTLESS, AND DRIVEN, HE BRINGS A DEADLY FORCE TO PETER'S
+                  WORLD AS A NEW DAY BEGINS.
+                </p>
+              </div>
+            </div>
+
+            <div className="char7_box absolute h-screen gap-15 top-4 inset-0 overflow-hidden flex-col flex justify-center items-center w-screen">
+              <div className="char7_img">
+                <img src={scorpion} alt="" className="h-auto object-contain" />
+              </div>
+              <div className="items-center char7_text flex px-10 justify-between relative w-full bottom-4">
+                <h2
+                  style={{ fontFamily: "Sekuya" }}
+                  className="uppercase text-6xl"
+                >
+                  scorpion <span className="block">- mac gargan</span>
+                </h2>
+                <p className="max-w-sm font-medium text-[15px] text-justify">
+                  SCORPION RETURNS TO A NEW CHAPTER, CARRYING THE RAGE OF HIS
+                  PAST WHILE HUNTING FOR A CHANCE AT REVENGE.RUTHLESS,
+                  DANGEROUS, AND UNPREDICTABLE, HE BRINGS A DEADLY NEW THREAT TO
+                  PETER’S WORLD AS A NEW DAY BEGINS
                 </p>
               </div>
             </div>
