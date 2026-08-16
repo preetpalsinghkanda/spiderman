@@ -9,6 +9,7 @@ import longSpider from "../assets/longSpider.png";
 import spiderVideo from "../assets/bgspider.mp4";
 import peter from "../assets/peter.png";
 import mj from "../assets/mj.png";
+import frnd from "../assets/frnd.png";
 
 const Hero = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -34,9 +35,9 @@ const Hero = () => {
         start: "top top",
         // markers: true,
         pin: true,
-        scrub: true,
-        end: "+=3050",
-        wheelMultiplier: 2,
+        scrub: 3,
+        end: "+=8000",
+        // wheelMultiplier: 2,
       },
     });
 
@@ -327,19 +328,19 @@ const Hero = () => {
       "+=30",
     );
 
-    gsap.set(".char2_box", {
+    gsap.set([".char2_box", ".char3_box"], {
       // opacity : 0 ,
       yPercent: 20,
       xPercent: -12,
     });
 
-    gsap.set(".char2_img", {
+    gsap.set([".char2_img",".char3_img"], {
       opacity: 0,
       yPercent: 30,
       xPercent: 10,
     });
 
-    gsap.set(".char2_text", {
+    gsap.set([".char2_text", ".char3_text"], {
       opacity: 0,
       yPercent: 30,
     });
@@ -364,6 +365,7 @@ const Hero = () => {
       "+=10",
     );
 
+
     tl.to(
       ".char2_box",
       {
@@ -382,8 +384,10 @@ const Hero = () => {
         yPercent: 0,
         duration: 40,
       },
-      "<",
+      "+=10",
     );
+
+    
 
     tl.to(
       ".char2_text",
@@ -394,6 +398,50 @@ const Hero = () => {
       },
       "+=15",
     );
+
+
+     tl.to(
+      ".char2_img",
+      {
+        opacity: 0,
+        yPercent: -20,
+        duration: 80,
+      },
+      "+=50 ",
+    );
+
+       tl.to(
+      ".char2_text",
+      {
+        opacity: 0,
+        duration: 50,
+        yPercent: 40,
+      },
+      "+=10",
+    );
+
+    tl.to(".char3_box" , {
+      duration : 80 ,
+      y:448,
+      yPercent : 0,
+    }, "<")
+
+
+    tl.to(".char3_img",{
+      opacity: 1,
+      yPercent: 0,
+      duration : 40 ,
+      xPercent: 0,
+
+    }, "+=10")
+
+
+    tl.to(".char3_text" , {
+      opacity: 1,
+      yPercent: 0,
+      duration: 40
+    },"+=15")
+
   });
 
   return (
@@ -633,7 +681,7 @@ const Hero = () => {
                 <img src={mj} alt="" className="h-auto  object-contain " />
               </div>
 
-              <div className="items-center char2_text flex px-10 justify-between relative w-full bottom-4">
+              <div className="items-center char2_text  flex px-10 justify-between relative w-full bottom-4">
                 <h4
                   style={{ fontFamily: "Sekuya" }}
                   className="uppercase text-6xl"
@@ -645,6 +693,26 @@ const Hero = () => {
                   WHILE STEPPING INTO AN UNCERTAIN FUTURE. STRONG, RESILIENT,
                   AND UNAFRAID, SHE STANDS BESIDE PETER AS A FAMILIAR HEART IN A
                   BRAND NEW DAY.
+                </p>
+              </div>
+            </div>
+
+            <div className="char3_box absolute  h-screen gap-16 inset-0 overflow-hidden flex-col flex justify-center items-center w-screen">
+              <div className="char3_img">
+                <img src={frnd} alt="" className="h-auto object-contain" />
+              </div>
+              <div className="items-center char3_text flex px-10 justify-between relative w-full bottom-4 ">
+                <h2
+                  style={{ fontFamily: "Sekuya" }}
+                  className="uppercase text-6xl"
+                >
+                  Ned <span className="block">Leeds</span>
+                </h2>
+                <p className="max-w-sm font-medium text-[15px] text-justify">
+                  NED LEEDS RETURNS TO A NEW CHAPTER, CARRYING THE LESSONS OF
+                  THE PAST WHILE STEPPING INTO AN UNCERTAIN FUTURE. LOYAL,
+                  BRILLIANT, AND UNWAVERING, HE STANDS BESIDE PETER AS A TRUSTED
+                  FRIEND THROUGH EVERY TWIST OF A BRAND NEW DAY.
                 </p>
               </div>
             </div>
