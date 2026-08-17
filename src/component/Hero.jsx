@@ -14,6 +14,7 @@ import jane from "../assets/jane.png";
 import banner from "../assets/hulk.png";
 import scorpion from "../assets/scorpion.png";
 import punisher from "../assets/punisher.png";
+import footerSpider from "../assets/footerspider.jpg";
 
 const Hero = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -701,6 +702,24 @@ const Hero = () => {
       },
       "+=10",
     );
+
+    gsap.set(".footerimg", {
+      clipPath: "polygon(50% 0%, 50% 0% , 50% 100% , 50% 100%)",
+    });
+
+    tl.to(".footerimg", {
+      clipPath: "polygon(0% 0%, 100% 0% ,100% 100% , 0% 100%)",
+      duration: 50,
+    });
+
+    gsap.set(".footer_text", {
+      yPercent: 140,
+    });
+
+    tl.to(".footer_text", {
+      yPercent: -140,
+      duration: 600,
+    });
   });
 
   return (
@@ -1055,6 +1074,43 @@ const Hero = () => {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="absolute footerimg h-full w-full  overflow-hidden z-80">
+        <img src={footerSpider} className="w-full h-full object-cover" alt="" />
+
+        <div className="absolute inset-0 bg-black/20 "></div>
+
+        <div className="footer_text absolute flex-col inset-0 flex items-center justify-center z-10">
+          <p
+            style={{ fontFamily: "Sekuya, system-ui" }}
+            className="text-white  uppercase text-6xl [-webkit-text-stroke:1px_black] max-w-[700px] text-center"
+          >
+            a brand new day begins with a fresh perspective, a quieter kind of
+            courage, and the belief that every new beginning holds the power to
+            change what come next
+          </p>
+
+          <div className=" ">
+            <p className="my-10 text-white max-w-sm text-justify  mx-auto">
+              A NEW DAY IS NOT SIMPLY A BEGINNING. IT IS A CHANCE TO SEE, FEEL,
+              AND EXPERIENCE THE WORLD.
+            </p>
+          </div>
+
+          <div className=" text-[#EE3335] w-full gap-6 flex flex-col uppercase px-6">
+            <div className="flex justify-between ">
+              <span>&copy;2026</span>
+              <span>site by preet</span>
+            </div>
+            <p
+              style={{ fontFamily: "Bricolage Grotesque, sans-serif" }}
+              className="text-[] text-center text-9xl font-[900]"
+            >
+              spider Brand new day
+            </p>
           </div>
         </div>
       </div>
