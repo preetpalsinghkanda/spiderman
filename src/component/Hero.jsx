@@ -20,6 +20,41 @@ const Hero = () => {
   gsap.registerPlugin(ScrollTrigger);
 
   useGSAP(() => {
+    const brandNewDay = document.querySelector(".brandnewday");
+
+    const brandNewDayBG = brandNewDay.querySelector(".brandnewday-background");
+
+    const brandNewDayReveal = brandNewDay.querySelector(".brandnewday-reveal");
+
+    brandNewDay.addEventListener("mouseenter", () => {
+      gsap.to(brandNewDayBG, {
+        scaleX: 1,
+        duration: 0.7,
+        ease: "power2.out",
+      });
+
+      gsap.to(brandNewDayReveal, {
+        clipPath: "inset(0 0% 0 0)",
+        duration: 0.7,
+        ease: "power2.out",
+      });
+    });
+
+    brandNewDay.addEventListener("mouseleave", () => {
+      gsap.to(brandNewDayBG, {
+        scaleX: 0,
+        ease: "power2.inOut",
+        duration: 0.7,
+      });
+
+      gsap.to(brandNewDayReveal, {
+        clipPath: "inset(0 100% 0 0",
+        ease: "power2.inOut",
+
+        duration: 0.7,
+      });
+    });
+
     gsap.set(".longspider_text", {
       opacity: 0,
       yPercent: 100,
@@ -184,7 +219,7 @@ const Hero = () => {
       {
         opacity: 1,
         yPercent: 0,
-        duration: 30,
+        duration: 100,
       },
       "<10%",
     );
@@ -1116,7 +1151,12 @@ const Hero = () => {
           </div>
 
           <div className=" text-[#EE3335] my-30 flex justify-between w-full px-6">
-            <a href="https://github.com/preetpalsinghkanda/" className="uppercase hover:text-[#ee3336ad] font-bold cursor-pointer">Github</a>
+            <a
+              href="https://github.com/preetpalsinghkanda/"
+              className="uppercase hover:text-[#ee3336ad] font-bold cursor-pointer"
+            >
+              Github
+            </a>
             <div className="flex flex-col items-center gap-6">
               <span
                 style={{ fontFamily: "Libre Baskerville, serif" }}
@@ -1124,7 +1164,8 @@ const Hero = () => {
               >
                 Marvel Studios /Sony
               </span>
-              <a href="https://www.district.in/movies/spider-man-brand-new-day-movie-tickets-MV194537"
+              <a
+                href="https://www.district.in/movies/spider-man-brand-new-day-movie-tickets-MV194537"
                 style={{ fontFamily: "Sekuya , system-ui" }}
                 className="bg-white px-5 py-1 hover:text-[black] hover:bg-[#EE3335] cursor-pointer font-extrabold rounded-full"
               >
@@ -1143,12 +1184,32 @@ const Hero = () => {
               <span className="font-bold">&copy;2026</span>
               <span className="font-bold">site by preet</span>
             </div>
-            <p
-              style={{ fontFamily: "Bricolage Grotesque, sans-serif" }}
-              className="text-[] text-center text-9xl font-[900]"
-            >
-              spider - Brand new day
-            </p>
+
+            <div className="relative w-full overflow-hidden brandnewday">
+              <div
+                style={{ transform: "scaleX(0)", transformOrigin: "left" }}
+                className="absolute inset-0 bg-[#EE3335] brandnewday-background"
+              ></div>
+
+              <p
+                style={{ fontFamily: "Bricolage Grotesque, sans-serif" }}
+                className="relative text-[#EE3335] brandnewday text-center text-9xl font-[900]"
+              >
+                spider - Brand new day
+              </p>
+
+              <div
+                style={{ clipPath: "inset(0 100% 0 0)" }}
+                className="absolute inset-0 z-20 brandnewday-reveal "
+              >
+                <p
+                  style={{ fontFamily: "Bricolage Grotesque, sans-serif" }}
+                  className="text-black  text-center text-9xl font-[900]"
+                >
+                  spider - brand new day
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
