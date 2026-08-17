@@ -40,7 +40,7 @@ const Hero = () => {
         // markers: true,
         pin: true,
         scrub: 3,
-        end: "+=8000",
+        end: "+=10000",
         // wheelMultiplier: 2,
       },
     });
@@ -128,14 +128,14 @@ const Hero = () => {
 
     tl.to(".left_top_img", {
       yPercent: 0,
-      duration: 60,
+      duration: 130,
     });
 
     tl.to(
       ".right_bottom_img",
       {
         yPercent: 0,
-        duration: 60,
+        duration: 130,
       },
       "<",
     );
@@ -147,7 +147,7 @@ const Hero = () => {
 
     tl.to([".line1", ".line3"], {
       opacity: 1,
-      duration: 6,
+      duration: 25,
       yPercent: 0,
     });
 
@@ -155,10 +155,10 @@ const Hero = () => {
       [".line2", ".line4"],
       {
         opacity: 1,
-        duration: 6,
+        duration: 25,
         yPercent: 0,
       },
-      "+=0.1",
+      "+=0.2",
     );
 
     gsap.set(".longSpider", {
@@ -175,7 +175,7 @@ const Hero = () => {
 
     tl.to(".longSpider", {
       yPercent: -190,
-      duration: 100,
+      duration: 600,
     });
 
     tl.to(
@@ -193,8 +193,7 @@ const Hero = () => {
       {
         delay: 1,
         yPercent: -100,
-        duration: 30,
-        ease: "none",
+        duration: 150,
       },
       "<",
     );
@@ -203,8 +202,7 @@ const Hero = () => {
       ".leftright_overlay",
       {
         opacity: 0.7,
-        duration: 10,
-        ease: "none",
+        duration: 40,
       },
       "<",
     );
@@ -221,16 +219,15 @@ const Hero = () => {
 
     tl.to(".spidervideo", {
       // height: "100vh",
-      duration: 50,
+      duration: 300,
       clipPath: "inset(0% 0% 0% 0%)",
-      ease: "none",
     });
 
     tl.to(
       ".longSpiderBlack",
       {
-        opacity: 1,
-        duration: 20,
+        opacity: 0.8,
+        duration: 80,
       },
       "<10%",
     );
@@ -239,20 +236,20 @@ const Hero = () => {
       ".spidervideo_text_firstline",
       {
         yPercent: 0,
-        duration: 6,
+        duration: 10,
         opacity: 1,
       },
-      "-=20",
+      "-=190",
     );
 
     tl.to(
       ".spidervideo_text_secondline",
       {
         yPercent: 0,
-        duration: 6,
+        duration: 10,
         opacity: 1,
       },
-      "-=25",
+      "-=195",
     );
 
     gsap.set(".starcast", {
@@ -263,7 +260,7 @@ const Hero = () => {
       ".starcast",
       {
         yPercent: 0,
-        duration: 100,
+        duration: 300,
       },
       "+=30",
     );
@@ -287,10 +284,10 @@ const Hero = () => {
       {
         yPercent: 0,
         opacity: 1,
-        duration: 20,
+        duration: 30,
         stagger: 6,
       },
-      "-=85",
+      "-=245",
     );
 
     // gsap.set(".allcast_img",{
@@ -302,10 +299,10 @@ const Hero = () => {
       ".peter_img",
       {
         yPercent: 50,
-        duration: 90,
+        duration: 200,
         xPercent: -12,
       },
-      "-=52",
+      "-=150",
     );
 
     tl.to(
