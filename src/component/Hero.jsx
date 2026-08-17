@@ -38,7 +38,7 @@ const Hero = () => {
       scrollTrigger: {
         trigger: ".hero",
         start: "top top",
-        // markers: true,
+        markers: true,
         pin: true,
         scrub: 3,
         end: "+=10000",
@@ -713,12 +713,27 @@ const Hero = () => {
     });
 
     gsap.set(".footer_text", {
-      yPercent: 140,
+      yPercent: 42,
     });
 
+    gsap.set(".footer_text_first", {
+      yPercent: 100,
+      opacity: 0,
+    });
+
+    tl.to(
+      ".footer_text_first",
+      {
+        yPercent: 0,
+        opacity: 1,
+        duration: 150,
+      },
+      "+=30",
+    );
+
     tl.to(".footer_text", {
-      yPercent: -140,
-      duration: 600,
+      yPercent: -42,
+      duration: 400,
     });
   });
 
@@ -1086,7 +1101,7 @@ const Hero = () => {
         <div className="footer_text absolute flex-col inset-0 flex items-center justify-center z-10">
           <p
             style={{ fontFamily: "Sekuya, system-ui" }}
-            className="text-white  uppercase text-6xl [-webkit-text-stroke:1px_black] max-w-[700px] text-center"
+            className="text-white  uppercase text-6xl footer_text_first [-webkit-text-stroke:1px_black] max-w-[700px] text-center"
           >
             a brand new day begins with a fresh perspective, a quieter kind of
             courage, and the belief that every new beginning holds the power to
@@ -1100,16 +1115,39 @@ const Hero = () => {
             </p>
           </div>
 
-          <div className=" text-[#EE3335] w-full gap-6 flex flex-col uppercase px-6">
+          <div className=" text-[#EE3335] my-30 flex justify-between w-full px-6">
+            <a href="https://github.com/preetpalsinghkanda/" className="uppercase hover:text-[#ee3336ad] font-bold cursor-pointer">Github</a>
+            <div className="flex flex-col items-center gap-6">
+              <span
+                style={{ fontFamily: "Libre Baskerville, serif" }}
+                className="text-6xl marvel font-bold"
+              >
+                Marvel Studios /Sony
+              </span>
+              <a href="https://www.district.in/movies/spider-man-brand-new-day-movie-tickets-MV194537"
+                style={{ fontFamily: "Sekuya , system-ui" }}
+                className="bg-white px-5 py-1 hover:text-[black] hover:bg-[#EE3335] cursor-pointer font-extrabold rounded-full"
+              >
+                BOOK
+              </a>
+            </div>
+            <div className="flex font-bold flex-col text-end uppercase">
+              <span className="cursor-pointer">about</span>
+              <span className="cursor-pointer">contact us</span>
+              <span className="cursor-pointer">EXPERIENCE</span>
+            </div>
+          </div>
+
+          <div className=" text-[#EE3335] w-full gap-8 flex flex-col uppercase px-6">
             <div className="flex justify-between ">
-              <span>&copy;2026</span>
-              <span>site by preet</span>
+              <span className="font-bold">&copy;2026</span>
+              <span className="font-bold">site by preet</span>
             </div>
             <p
               style={{ fontFamily: "Bricolage Grotesque, sans-serif" }}
               className="text-[] text-center text-9xl font-[900]"
             >
-              spider Brand new day
+              spider - Brand new day
             </p>
           </div>
         </div>
