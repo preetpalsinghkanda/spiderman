@@ -14,7 +14,7 @@ const PreLoader = () => {
 
     gsap.to(count, {
       value: 100,
-      duration: 0.8,
+      duration: 2.5,
       ease: "none",
 
       onUpdate: () => {
@@ -25,7 +25,7 @@ const PreLoader = () => {
       onComplete: () => {
         gsap.to(loaderRef.current, {
           yPercent: -100,
-          duration: 1,
+          duration: 2,
           ease: "power4.inOut",
         });
       },

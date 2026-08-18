@@ -2,7 +2,7 @@ import React from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import spiderHeroImg from "../assets/spider-unsplash.jpg";
+import spiderHeroImg from "../assets/spider-unsplash.png";
 import leftphoto from "../assets/leftphoto.webp";
 import rightphoto from "../assets/rightphoto.webp";
 import longSpider from "../assets/longSpider.png";
@@ -15,6 +15,7 @@ import banner from "../assets/hulk.png";
 import scorpion from "../assets/scorpion.png";
 import punisher from "../assets/punisher.png";
 import footerSpider from "../assets/footerspider.jpg";
+import RightLeft from "../component/RightLeft";
 
 const Hero = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -73,7 +74,7 @@ const Hero = () => {
       scrollTrigger: {
         trigger: ".hero",
         start: "top top",
-        markers: true,
+        // markers: true,
         pin: true,
         scrub: 3,
         end: "+=10000",
@@ -248,6 +249,10 @@ const Hero = () => {
       clipPath: "inset(100% 0% 0% 0%)",
     });
 
+    gsap.set(".rightleft-comp", {
+      opacity: 0,
+    });
+
     gsap.set([".spidervideo_text_firstline", ".spidervideo_text_secondline"], {
       yPercent: 60,
       opacity: 0,
@@ -257,6 +262,11 @@ const Hero = () => {
       // height: "100vh",
       duration: 300,
       clipPath: "inset(0% 0% 0% 0%)",
+    });
+
+    tl.to(".rightleft-comp", {
+      opacity: 1,
+      duration: 30,
     });
 
     tl.to(
@@ -763,7 +773,7 @@ const Hero = () => {
         opacity: 1,
         duration: 150,
       },
-      "+=30",
+      "+=50",
     );
 
     tl.to(".footer_text", {
@@ -920,6 +930,9 @@ const Hero = () => {
           src={spiderVideo}
         ></video>
 
+        <div className="rightleft-comp absolute bottom-0 left-0 w-full z-[71] ">
+          <RightLeft />
+        </div>
         <div className="absolute inset-0 bg-black/50"></div>
 
         <div className="absolute justify-center uppercase  flex-col spidervideo_text w-full px-8 inset-0 flex items-center  z-60">
