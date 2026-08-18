@@ -5,7 +5,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import spiderHeroImg from "../assets/spider-unsplash.png";
 import leftphoto from "../assets/leftphoto.webp";
 import rightphoto from "../assets/rightphoto.webp";
-import longSpider from "../assets/longSpider.png";
+import longSpider from "../assets/longspider.png";
 import spiderVideo from "../assets/bgspider.mp4";
 import peter from "../assets/peter.png";
 import mj from "../assets/mj.png";
