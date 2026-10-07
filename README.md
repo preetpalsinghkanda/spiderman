@@ -18,6 +18,16 @@ i recently learned GSAP from youtube (all thanks to sheryians coding school), so
 - Lenis
 - HTML
 
+## Inspiration
+
+i only took inspiration from `https://www.voyeurverite.com`
+along with that some visual style, layout ideas and animation effect (only visual)
+however, i built those elements and animation myself from scratch, i used pure gsap with lenis(for smooth scrolling animation)
+the footer interaction, character interactions, horizontal bar (scroll trigger ), and overall concept were my own ideass
+i used that site as a reference for the kind of experience i wanted to create
+
+> built with a lot of hard work and focused on every minor details 
+
 ## Preview (Video)
 > Click image to download the video
 
