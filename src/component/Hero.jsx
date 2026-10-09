@@ -306,7 +306,7 @@ const Hero = () => {
       ".starcast",
       {
         yPercent: 0,
-        duration: 300,
+        duration: 280,
       },
       "+=30",
     );
@@ -314,8 +314,8 @@ const Hero = () => {
     tl.to(
       ".spidervideo",
       {
-        yPercent: -50,
-        duration: 100,
+        yPercent: -80,
+        duration: 300,
       },
       "<",
     );
@@ -356,6 +356,16 @@ const Hero = () => {
       {
         top: "70px",
         duration: 80,
+      },
+      "<",
+    );
+
+    tl.to(
+      ".starcast_heading",
+      {
+        y: -100,
+        opacity: 0,
+        duration: 120,
       },
       "<",
     );
@@ -777,8 +787,8 @@ const Hero = () => {
     );
 
     tl.to(".footer_text", {
-      yPercent: -42,
-      duration: 400,
+      yPercent: -53,
+      duration: 450,
     });
   });
 
@@ -935,12 +945,12 @@ const Hero = () => {
         </div>
         <div className="absolute inset-0 bg-black/50"></div>
 
-        <div className="absolute justify-center uppercase  flex-col spidervideo_text w-full px-8 inset-0 flex items-center  z-60">
+        <div className="absolute justify-center uppercase  flex-col spidervideo_text w-full lg:px-12  xl:px-8 inset-0 flex items-center  z-60">
           <div className="text-[#EE3335]  w-full flex justify-between spidervideo_text_firstline">
             <div className="">
               <span
                 style={{ fontFamily: "Sekuya" }}
-                className="text-8xl font-extrabold"
+                className="xl:text-8xl lg:text-7xl font-extrabold"
               >
                 Truth
               </span>
@@ -950,18 +960,18 @@ const Hero = () => {
               <span className="mx-3">03</span>
               <span
                 style={{ fontFamily: "Sekuya" }}
-                className="text-8xl font-extrabold"
+                className="xl:text-8xl lg:text-7xl font-extrabold"
               >
                 grit
               </span>
             </div>
           </div>
 
-          <div className="flex w-full spidervideo_text_secondline justify-between text-[#EE3335]">
+          <div className="flex w-full spidervideo_text_secondline justify-between text-[#EE3335] ">
             <div>
               <span
                 style={{ fontFamily: "Sekuya" }}
-                className="text-8xl font-extrabold"
+                className="xl:text-8xl lg:text-7xl font-extrabold"
               >
                 Humility
               </span>
@@ -972,7 +982,7 @@ const Hero = () => {
               <span className="mx-3">04</span>
               <span
                 style={{ fontFamily: "Sekuya" }}
-                className="text-8xl font-extrabold"
+                className="xl:text-8xl lg:text-7xl font-extrabold"
               >
                 Evolve
               </span>
@@ -997,7 +1007,11 @@ const Hero = () => {
           <div className="char_wrap relative w-screen h-[100vh] ">
             <div className="peter_img absolute inset-0    overflow-hidden flex-col  flex justify-center items-center  w-screen ">
               <div className="peterparker_img">
-                <img className="h-auto object-contain " src={peter} alt="" />
+                <img
+                  className="xl:h-auto lg:h-140 object-contain "
+                  src={peter}
+                  alt=""
+                />
                 {/* <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#F5F2ED] to-transparent z-30 "></div> */}
               </div>
 
@@ -1017,12 +1031,16 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="char2_box absolute  h-screen inset-0 overflow-hidden flex-col flex justify-center items-center w-screen ">
+            <div className="char2_box  xl:inset-0 bottom-22 absolute  h-screen  overflow-hidden flex-col flex justify-center items-center w-screen xl:gap-20 lg:gap-4">
               <div className="char2_img ">
-                <img src={mj} alt="" className="h-auto  object-contain " />
+                <img
+                  src={mj}
+                  alt=""
+                  className="xl:h-120 lg:h-100  object-contain "
+                />
               </div>
 
-              <div className="items-center char2_text  flex px-10 justify-between relative w-full bottom-4">
+              <div className="items-center char2_text  flex px-10  justify-between relative w-full xl:bottom-4 lg:-bottom-2">
                 <h4
                   style={{ fontFamily: "Sekuya" }}
                   className="uppercase text-6xl"
@@ -1038,9 +1056,13 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="char3_box absolute  h-screen gap-16 inset-0 overflow-hidden flex-col flex justify-center items-center w-screen">
+            <div className="char3_box absolute  h-screen gap-16 xl:inset-0 bottom-18 overflow-hidden flex-col flex justify-center items-center w-screen">
               <div className="char3_img">
-                <img src={frnd} alt="" className="h-auto object-contain" />
+                <img
+                  src={frnd}
+                  alt=""
+                  className="xl:h-120 lg:h-90 object-contain"
+                />
               </div>
               <div className="items-center char3_text flex px-10 justify-between relative w-full bottom-4 ">
                 <h2
@@ -1058,9 +1080,13 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="char4_box absolute h-screen  inset-0 overflow-hidden flex-col flex justify-center items-center w-screen">
+            <div className="char4_box absolute h-screen  xl:inset-0 bottom-16 lg:gap-10 overflow-hidden flex-col flex justify-center items-center w-screen">
               <div className="char4_img">
-                <img src={jane} alt="" className="h-auto object-contain" />
+                <img
+                  src={jane}
+                  alt=""
+                  className="xl:h-160 lg:h-120 object-contain"
+                />
               </div>
               <div className="items-center char4_text flex px-10 justify-between relative w-full bottom-4">
                 <h2
@@ -1078,11 +1104,15 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="char5_box absolute h-screen top-15  inset-0 overflow-hidden flex-col flex justify-center items-center w-screen">
+            <div className="char5_box absolute h-screen xl:top-15 gap-14 bottom-6 xl:inset-0   overflow-hidden flex-col flex justify-center items-center w-screen">
               <div className="char5_img">
-                <img src={banner} alt="" className="h-auto object-contain" />
+                <img
+                  src={banner}
+                  alt=""
+                  className="xl:h-120 lg:h-100 object-contain"
+                />
               </div>
-              <div className="items-center char5_text flex px-10 justify-between relative w-full bottom-4">
+              <div className="items-center  char5_text flex px-10 justify-between relative w-full bottom-4">
                 <h2
                   style={{ fontFamily: "Sekuya" }}
                   className="uppercase text-6xl"
@@ -1098,9 +1128,13 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="char6_box absolute h-screen top-8 gap-10 inset-0 overflow-hidden flex-col flex justify-center items-center w-screen">
+            <div className="char6_box absolute h-screen xl:top-8 lg:-top-6 lg:gap-10 xl:gap-18 xl:inset-0  overflow-hidden flex-col flex justify-center items-center w-screen">
               <div className="char6_img">
-                <img src={punisher} alt="" className="h-auto object-contain" />
+                <img
+                  src={punisher}
+                  alt=""
+                  className="xl:h-130 lg:h-100 object-contain"
+                />
               </div>
               <div className="items-center char6_text flex px-10 justify-between relative w-full bottom-4">
                 <h2
@@ -1118,9 +1152,13 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="char7_box absolute h-screen gap-15 top-4 inset-0 overflow-hidden flex-col flex justify-center items-center w-screen">
+            <div className="char7_box absolute h-screen lg:gap-15 xl:gap-20 xl:top-7 lg:-top-10 xl:inset-0  overflow-hidden flex-col flex justify-center items-center w-screen">
               <div className="char7_img">
-                <img src={scorpion} alt="" className="h-auto object-contain" />
+                <img
+                  src={scorpion}
+                  alt=""
+                  className="xl:h-130 lg:h-100 object-contain"
+                />
               </div>
               <div className="items-center char7_text flex px-10 justify-between relative w-full bottom-4">
                 <h2

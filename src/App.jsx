@@ -24,7 +24,7 @@ const App = () => {
 
   return (
     <div className="h-[100vh]">
-      <PreLoader/>
+      {/* <PreLoader/> */}
 
       <Navbar />
 
