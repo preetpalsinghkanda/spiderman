@@ -787,7 +787,7 @@ const Hero = () => {
     );
 
     tl.to(".footer_text", {
-      yPercent: -53,
+      yPercent: -190,
       duration: 450,
     });
   });
@@ -1015,7 +1015,7 @@ const Hero = () => {
                 {/* <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#F5F2ED] to-transparent z-30 "></div> */}
               </div>
 
-              <div className=" items-center peter_text flex px-10 justify-between relative bottom-4 w-full">
+              <div className=" items-center peter_text flex px-10 justify-between relative  xl:bottom-4 lg:bottom-14 w-full">
                 <h4
                   style={{ fontFamily: "Sekuya" }}
                   className="uppercase text-6xl"
@@ -1040,7 +1040,7 @@ const Hero = () => {
                 />
               </div>
 
-              <div className="items-center char2_text  flex px-10  justify-between relative w-full xl:bottom-4 lg:-bottom-2">
+              <div className="items-center char2_text  flex px-10  justify-between relative w-full xl:bottom-4 lg:bottom-8">
                 <h4
                   style={{ fontFamily: "Sekuya" }}
                   className="uppercase text-6xl"
@@ -1064,7 +1064,7 @@ const Hero = () => {
                   className="xl:h-120 lg:h-90 object-contain"
                 />
               </div>
-              <div className="items-center char3_text flex px-10 justify-between relative w-full bottom-4 ">
+              <div className="items-center char3_text flex px-10 justify-between relative w-full xl:bottom-4 lg:bottom-12">
                 <h2
                   style={{ fontFamily: "Sekuya" }}
                   className="uppercase text-6xl"
@@ -1074,8 +1074,8 @@ const Hero = () => {
                 <p className="max-w-sm font-medium text-[15px] text-justify">
                   NED LEEDS RETURNS TO A NEW CHAPTER, CARRYING THE LESSONS OF
                   THE PAST WHILE STEPPING INTO AN UNCERTAIN FUTURE. LOYAL,
-                  BRILLIANT, AND UNWAVERING, HE STANDS BESIDE PETER AS A TRUSTED
-                  FRIEND THROUGH EVERY TWIST OF A BRAND NEW DAY.
+                  BRILLIANT, HE STANDS BESIDE PETER AS A TRUSTED FRIEND THROUGH
+                  EVERY TWIST OF A BRAND NEW DAY.
                 </p>
               </div>
             </div>
@@ -1088,7 +1088,7 @@ const Hero = () => {
                   className="xl:h-160 lg:h-120 object-contain"
                 />
               </div>
-              <div className="items-center char4_text flex px-10 justify-between relative w-full bottom-4">
+              <div className="items-center char4_text flex px-10 justify-between relative w-full xl:bottom-4 lg:bottom-14">
                 <h2
                   style={{ fontFamily: "Sekuya" }}
                   className="uppercase text-6xl"
@@ -1112,7 +1112,7 @@ const Hero = () => {
                   className="xl:h-120 lg:h-100 object-contain"
                 />
               </div>
-              <div className="items-center  char5_text flex px-10 justify-between relative w-full bottom-4">
+              <div className="items-center  char5_text flex px-10 justify-between relative w-full xl:bottom-4 bottom-16">
                 <h2
                   style={{ fontFamily: "Sekuya" }}
                   className="uppercase text-6xl"
@@ -1136,7 +1136,7 @@ const Hero = () => {
                   className="xl:h-130 lg:h-100 object-contain"
                 />
               </div>
-              <div className="items-center char6_text flex px-10 justify-between relative w-full bottom-4">
+              <div className="items-center char6_text flex px-10 justify-between relative w-full xl:bottom-4 lg:bottom-14">
                 <h2
                   style={{ fontFamily: "Sekuya" }}
                   className="uppercase text-6xl"
@@ -1160,7 +1160,7 @@ const Hero = () => {
                   className="xl:h-130 lg:h-100 object-contain"
                 />
               </div>
-              <div className="items-center char7_text flex px-10 justify-between relative w-full bottom-4">
+              <div className="items-center char7_text flex px-10 justify-between relative w-full xl:bottom-4 lg:bottom-12">
                 <h2
                   style={{ fontFamily: "Sekuya" }}
                   className="uppercase text-6xl"
@@ -1244,7 +1244,7 @@ const Hero = () => {
 
               <p
                 style={{ fontFamily: "Bricolage Grotesque, sans-serif" }}
-                className="relative text-[#EE3335] brandnewday text-center text-9xl font-[900]"
+                className="relative text-[#EE3335] whitespace-nowrap brandnewday text-center lg:text-8xl xl:text-9xl font-[900]"
               >
                 spider - Brand new day
               </p>
@@ -1255,7 +1255,7 @@ const Hero = () => {
               >
                 <p
                   style={{ fontFamily: "Bricolage Grotesque, sans-serif" }}
-                  className="text-black  text-center text-9xl font-[900]"
+                  className="text-black whitespace-nowrap text-center xl:text-9xl lg:text-8xl font-[900]"
                 >
                   spider - brand new day
                 </p>
